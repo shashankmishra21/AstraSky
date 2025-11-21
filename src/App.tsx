@@ -11,6 +11,9 @@ import { NotificationSystem } from './components/NotificationSystem';
 import { FloatingStars } from './components/FloatingStars';
 import { AboutSection } from './components/AboutSection';
 import { Footer } from './components/Footer';
+import { CallToAction } from './components/CallToAction';
+import { AstronomyCalendar } from './components/AstronomyCalender';
+import { ObservationJournal } from './components/ObservationJournal';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -50,7 +53,7 @@ export default function App() {
       isDarkMode 
         ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950' 
         : 'bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50'
-    }`}>
+    } flex flex-col`}>
       <StarfieldBackground isDarkMode={isDarkMode} />
       <FloatingStars />
       <NotificationSystem isDarkMode={isDarkMode} />
@@ -146,10 +149,12 @@ export default function App() {
         </AnimatePresence>
       </motion.button>
 
-      <div className="relative z-10">
+      {/* The content container grows; footer at the bottom */}
+      <div className="relative z-10 flex-grow">
         <div className="container mx-auto px-4 py-8 max-w-7xl">
+
           <DashboardHeader isDarkMode={isDarkMode} />
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -158,9 +163,11 @@ export default function App() {
             <MetricsOverview isDarkMode={isDarkMode} />
           </motion.div>
 
-          {/* Add About and Featured Sites sections here */}
           <AboutSection />
-         
+          <AstronomyCalendar />          {/* <-- Calendar Section */}
+          <ObservationJournal />         {/* <-- Journal Section */}
+          <CallToAction />               {/* <-- CTA Section */}
+
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
             <motion.div
               className="xl:col-span-2"
@@ -216,5 +223,5 @@ export default function App() {
       </div>
       <Footer />
     </div>
-  )
-}   
+  );
+}
