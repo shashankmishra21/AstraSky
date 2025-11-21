@@ -49,29 +49,27 @@ export default function App() {
   }, [selectedLocations]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
-      isDarkMode 
-        ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950' 
-        : 'bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50'
-    } flex flex-col`}>
+    <div className={`min-h-screen transition-colors duration-500 ${isDarkMode
+      ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
+      : 'bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50'
+      } flex flex-col`}>
       <StarfieldBackground isDarkMode={isDarkMode} />
       <FloatingStars />
       <NotificationSystem isDarkMode={isDarkMode} />
-      
+
       {/* Custom Theme Toggle */}
       <motion.button
         onClick={toggleTheme}
-        className={`fixed top-6 right-6 z-50 w-20 h-20 rounded-full backdrop-blur-xl border transition-all duration-300 ${
-          isDarkMode
-            ? 'bg-slate-900/40 border-slate-700/50 hover:bg-slate-900/60'
-            : 'bg-white/60 border-slate-300/50 hover:bg-white/80'
-        }`}
+        className={`fixed top-6 right-6 z-50 w-20 h-20 rounded-full backdrop-blur-xl border transition-all duration-300 ${isDarkMode
+          ? 'bg-slate-900/40 border-slate-700/50 hover:bg-slate-900/60'
+          : 'bg-white/60 border-slate-300/50 hover:bg-white/80'
+          }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: 'spring', stiffness: 400 }}
         style={{
-          boxShadow: isDarkMode 
-            ? '0 8px 32px rgba(0, 0, 0, 0.4)' 
+          boxShadow: isDarkMode
+            ? '0 8px 32px rgba(0, 0, 0, 0.4)'
             : '0 8px 32px rgba(0, 0, 0, 0.1)',
         }}
       >
@@ -164,9 +162,6 @@ export default function App() {
           </motion.div>
 
           <AboutSection />
-          <AstronomyCalendar />          {/* <-- Calendar Section */}
-          <ObservationJournal />         {/* <-- Journal Section */}
-          <CallToAction />               {/* <-- CTA Section */}
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
             <motion.div
@@ -175,7 +170,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <LocationMap 
+              <LocationMap
                 isDarkMode={isDarkMode}
                 selectedLocations={selectedLocations}
                 onLocationSelect={handleLocationSelect}
@@ -196,7 +191,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <LocationCards 
+            <LocationCards
               isDarkMode={isDarkMode}
               selectedLocations={selectedLocations}
               onLocationSelect={handleLocationSelect}
@@ -211,7 +206,7 @@ export default function App() {
                 exit={{ opacity: 0, y: 40, scale: 0.9 }}
                 transition={{ type: 'spring', damping: 20 }}
               >
-                <ComparisonView 
+                <ComparisonView
                   isDarkMode={isDarkMode}
                   locationIds={selectedLocations}
                   onClose={() => setSelectedLocations([])}
@@ -220,7 +215,11 @@ export default function App() {
             )}
           </AnimatePresence>
         </div>
+        <AstronomyCalendar />
+        <ObservationJournal />
       </div>
+
+      <CallToAction />
       <Footer />
     </div>
   );
