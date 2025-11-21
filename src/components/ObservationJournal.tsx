@@ -76,7 +76,6 @@ function ObservationForm({ onAdd }: { onAdd: (report: ObservationReport) => void
   );
 }
 
-// --- 3. Observation Feed ---
 function ObservationFeed({ reports }: { reports: ObservationReport[] }) {
   return (
     <div className="space-y-4">

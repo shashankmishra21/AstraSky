@@ -35,7 +35,7 @@ export function LocationMap({
       whileHover={{ scale: 1.01 }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
-      {/* Header */}
+      
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div className={`p-2 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500`}>
@@ -60,9 +60,9 @@ export function LocationMap({
         </div>
       </div>
 
-      {/* Map Container */}
+     
       <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-        {/* Map Background */}
+      
         <div
           className={`absolute inset-0 ${
             isDarkMode
@@ -169,7 +169,7 @@ export function LocationMap({
                 whileHover={{ scale: 1.3, z: 50 }}
                 onClick={() => onLocationSelect(location.id)}
               >
-                {/* Pulsing ring */}
+              
                 <motion.div
                   className={`absolute inset-0 rounded-full ${
                     isSelected

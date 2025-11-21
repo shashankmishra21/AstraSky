@@ -12,7 +12,7 @@ export function DashboardHeader({ isDarkMode }: DashboardHeaderProps) {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className="text-center mb-10 md:mb-16 relative w-full px-2 sm:px-6 overflow-x-clip"
     >
-      {/* Constellation Pattern */}
+      
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden w-full h-28 md:h-32 lg:h-40">
         <motion.div
           className="relative w-full h-full"
@@ -21,7 +21,7 @@ export function DashboardHeader({ isDarkMode }: DashboardHeaderProps) {
           transition={{ delay: 0.5, duration: 1 }}
         >
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 150" preserveAspectRatio="none">
-            {/* Animated constellation lines */}
+         
             <motion.line
               x1="100" y1="75" x2="200" y2="50"
               stroke={isDarkMode ? '#cbd5e1' : '#64748b'}
@@ -55,7 +55,7 @@ export function DashboardHeader({ isDarkMode }: DashboardHeaderProps) {
               transition={{ delay: 0.9, duration: 1.2 }}
             />
           </svg>
-          {/* Constellation stars with twinkling animation */}
+        
           {[100, 200, 280, 520, 600, 700].map((x, i) => (
             <motion.div
               key={i}
@@ -80,7 +80,7 @@ export function DashboardHeader({ isDarkMode }: DashboardHeaderProps) {
         </motion.div>
       </div>
 
-      {/* Main Title and orbital icon */}
+   
       <div className="relative inline-block mb-2 md:mb-6 w-full">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6"
@@ -181,7 +181,6 @@ export function DashboardHeader({ isDarkMode }: DashboardHeaderProps) {
         </span>
       </motion.div>
 
-      {/* Ambient glows breathe */}
       <motion.div
         className="absolute top-0 left-1/4 w-40 h-40 md:w-64 md:h-64 rounded-full opacity-10 blur-3xl pointer-events-none"
         style={{

@@ -18,7 +18,7 @@ export function LocationCards({
   selectedLocations,
   onLocationSelect,
 }: LocationCardsProps) {
-  // Generate mock time-series data for sparkline
+
   const generateSparklineData = (baseValue: number) => {
     return Array.from({ length: 24 }, (_, i) => ({
       hour: i,
