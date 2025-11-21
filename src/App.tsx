@@ -10,7 +10,7 @@ import { StarfieldBackground } from './components/StarfieldBackground';
 import { NotificationSystem } from './components/NotificationSystem';
 import { FloatingStars } from './components/FloatingStars';
 import { AboutSection } from './components/AboutSection';
-import { FeaturedSitesSection } from './components/FeaturedSitesSection';
+import { Footer } from './components/Footer';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -214,7 +214,7 @@ export default function App() {
           </AnimatePresence>
         </div>
       </div>
-      
+      <Footer />
     </div>
   )
 }   
