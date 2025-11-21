@@ -58,7 +58,7 @@ The dashboard should assist users in selecting ideal locations for nighttime sky
 ---
 
 ## Project Live link
-- astrasky.vercel.app
+- https://astrasky.vercel.app
 
 ## Credits
 
